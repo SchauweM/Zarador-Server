@@ -2,9 +2,20 @@ package com.zarador.ect.dropwriting;
 
 import javafx.collections.FXCollections;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 /**
  * "The digital revolution is far more significant than the invention of writing or even of printing." - Douglas
  * Engelbart
@@ -19,6 +30,19 @@ public class DropManager {
      */
     private static final File file = new File("./data/def/npcDrops.dat");
 
+    public static void dump() throws IOException {
+    	if (DropTable.dropTables == null) {
+            DropTable.dropTables = new HashMap<>();
+            DropTable.deSerialize(file);
+        }
+    	Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    	Writer writer = new FileWriter("Output.json");
+    	gson.toJson(DropTable.dropTables, writer);
+    }
+
+    
+    
+    
     /**
      * Adds a drop to the drop table.
      * @param npcId The npc id of of the drop we are adding

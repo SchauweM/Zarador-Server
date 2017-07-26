@@ -2,13 +2,14 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/Schauwers/Documents/Illuzive/RSPSProject/Zarador/Zarador-Server/lib/gson-2.2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/Schauwers/Documents/Illuzive/RSPSProject/Zarador/Zarador-Server/lib/guava-18.0.jar"/>
-	<classpathentry kind="lib" path="/Users/Schauwers/Documents/Illuzive/RSPSProject/Zarador/Zarador-Server/lib/mvgate3.jar"/>
-	<classpathentry kind="lib" path="/Users/Schauwers/Documents/Illuzive/RSPSProject/Zarador/Zarador-Server/lib/mysql.jar"/>
-	<classpathentry kind="lib" path="/Users/Schauwers/Documents/Illuzive/RSPSProject/Zarador/Zarador-Server/lib/xpp3_min-1.1.4c.jar"/>
-	<classpathentry kind="lib" path="/Users/Schauwers/Documents/Illuzive/RSPSProject/Zarador/Zarador-Server/lib/netty-3.5.8.Final.jar"/>
 	<classpathentry kind="con" path="org.jetbrains.kotlin.core.KOTLIN_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/Schauwers/Documents/Illuzive/RSPSProject/Zarador/Zarador-Server/lib/mongodb-driver-3.4.2.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="lib/mongodb-driver-3.4.2.jar"/>
+	<classpathentry kind="lib" path="lib/mvgate3.jar"/>
+	<classpathentry kind="lib" path="lib/mysql.jar"/>
+	<classpathentry kind="lib" path="lib/netty-3.5.8.Final.jar"/>
+	<classpathentry kind="lib" path="lib/netty-all-4.0.49.Final.jar"/>
+	<classpathentry kind="lib" path="lib/xpp3_min-1.1.4c.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

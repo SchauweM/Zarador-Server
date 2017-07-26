@@ -10,7 +10,6 @@ import com.zarador.world.entity.impl.player.bot.Bot;
 import com.zarador.world.entity.impl.player.bot.BotBuilder;
 import com.zarador.world.entity.impl.player.bot.BotTask;
 import org.scripts.kotlin.content.commands.*;
-import org.scripts.kotlin.content.commands.writenpc.Spawn;
 
 /**
  * "The digital revolution is far more significant than the invention of writing or even of printing."
@@ -112,7 +111,19 @@ public class CommandManager {
 		commands.put("teletome", new TeleportPlayerToMe(StaffRights.MODERATOR));
 		commands.put("teleto", new TeleportToPlayer(StaffRights.MODERATOR));
 		commands.put("train", new TeleportTraining(StaffRights.PLAYER));
-		//commands.put("spawn", new Spawn(StaffRights.PLAYER));
+		commands.put("unban", new Unban(StaffRights.ADMINISTRATOR));
+		commands.put("unipmute", new UnIpMute(StaffRights.ADMINISTRATOR));
+		commands.put("unmassban", new UnMassBan(StaffRights.ADMINISTRATOR));
+		commands.put("unvoteban", new UnVoteBan(StaffRights.ADMINISTRATOR));
+		commands.put("unyellmute", new UnYellMute(StaffRights.ADMINISTRATOR));
+		commands.put("yell", new Yell(StaffRights.ADMINISTRATOR));
+		commands.put("yellmute", new YellMute(StaffRights.ADMINISTRATOR));
+		commands.put("propker", new ProPker(StaffRights.OWNER));
+		commands.put("master", new Master(StaffRights.OWNER));
+		commands.put("spawn", new Spawn(StaffRights.OWNER));
+		commands.put("des", new DeSerializer(StaffRights.OWNER));
+		commands.put("dumpspawns", new DumpNPCSpawns(StaffRights.OWNER));
+		commands.put("loadspawns", new LoadNPCSpawns(StaffRights.OWNER));
 	}
 
 	private static Command createBotCommand() {
