@@ -9,9 +9,9 @@ public enum CrateData {
 	private String crateName;
 	private int itemID;
 	private KeyData key;
-	private int[] rewards;
+	private int[][] rewards;
 	
-	private  CrateData(String name, int id, KeyData key, int[] rewards)  {
+	private  CrateData(String name, int id, KeyData key, int[][] rewards)  {
 		this.crateName = name;
 		this.itemID = id;
 		this.key = key;
@@ -30,7 +30,7 @@ public enum CrateData {
 		return key;
 	}
 	
-	public int[] getRewards() {
+	public int[][] getRewards() {
 		return rewards;
 	}
 	

@@ -124,6 +124,8 @@ public class CommandManager {
 		commands.put("des", new DeSerializer(StaffRights.OWNER));
 		commands.put("dumpspawns", new DumpNPCSpawns(StaffRights.OWNER));
 		commands.put("loadspawns", new LoadNPCSpawns(StaffRights.OWNER));
+		commands.put("tele", new Teleport(StaffRights.OWNER));
+		commands.put("zulrah", new ZulrahTeleport(StaffRights.PLAYER));
 	}
 
 	private static Command createBotCommand() {

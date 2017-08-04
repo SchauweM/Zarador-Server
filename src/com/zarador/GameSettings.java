@@ -17,6 +17,8 @@ public class GameSettings {
 	public static final int GAME_PORT = 43594;
 	public static final boolean HASH_PASSWORDS = false;
 
+	public static final String SERVER_NAME = "Zarador";
+	
 	/**
 	 * The game client_version
 	 */

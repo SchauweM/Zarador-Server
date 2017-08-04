@@ -1,14 +1,11 @@
 package com.zarador.world.content.combat.strategy.impl.zulrah;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.zarador.model.Animation;
 import com.zarador.model.Position;
+import com.zarador.model.RegionInstance;
+import com.zarador.model.RegionInstance.RegionInstanceType;
+import com.zarador.world.World;
+import com.zarador.world.entity.impl.npc.NPC;
 import com.zarador.world.entity.impl.player.Player;
 
 public class Zulrah {
@@ -18,66 +15,38 @@ public class Zulrah {
 	public final static Position EAST_POSITION = new Position(2278, 3075);
 	public final static Position SOUTH_POSITION = new Position(2268, 3064);
 	
-	public final static int[][] TOXIC_FUME_LOCATIONS_1 = { { 2263, 3076 }, { 2263, 3073 }, { 2263, 3070 }, { 2266, 3069 },
-													{ 2269, 3069 }, { 2272, 3070 }, { 2272, 3073 }, { 2273, 3076 } };
-	
-	public final static int[][] TOXIC_FUME_LOCATIONS_2 = { { 2263, 3070 }, { 2266, 3069 }, { 2269, 3069 }, { 2272, 3070 } };
-	
-	public final static int CRIMSON_ZULRAH_ID = 2044;
-	public final static int GREEN_ZULRAH_ID = 2043;
-	public final static int BLUE_ZULRAH_ID = 2042;
-	
-	public final static Animation RISE = new Animation(5073);
-	public final static Animation DIVE = new Animation(5072);
-	
-	public static List<ZulrahRotation> zulrahRotations = new ArrayList<>();
-	public static Map<Integer, ZulrahPhase> zulrahPhases = new HashMap<>();
-	
-	public static void initialize() {
-		setRotations();
-		setPhases();
-	}
+	public static final Animation ZULRAH_SPAWN_POISON = new Animation(5069);
+    public static final Animation SNAKELING_SPAWN_ANIMATION = new Animation(5069);
+    public static final Animation MELEE_TARGET = new Animation(5806);
+    public static final Animation MELEE_ATTACK = new Animation(5807);
+    public static final Animation ZULRAH_DIVE_ANIMATION = new Animation(5072);
+    public static final Animation ZULRAH_RISE_ANIMATION = new Animation(5073);
+    public static final Animation PROJECTILE_ATTACK = SNAKELING_SPAWN_ANIMATION;
 
-	private static void setRotations() {
-		zulrahRotations.add(new ZulrahRotation(1, "first rotation"));
-	}
-	
-	private static void setPhases() {
+    public static final Position SPAWN_LOCATION = new Position(2266, 3071, 0);
 
-	}
+    public static final Position START_LOCATION = new Position(2268, 3069, 0);
+
+    private static final int[][] VENOM_CLOUD_LOCATIONS = new int[][] {
+            {2267, 3068},
+            {2264, 3069},
+            {2262, 3073},
+            {2272, 3069},
+            {2272, 3073}
+    };
 	
-	public static void startBossFight(Player player) {
-		ZulrahRotation rotation = zulrahRotations.get(0);
+	public static void startZulrah(Player player) {
+		player.moveTo(new Position(2268, 3070, player.getIndex() * 4));
 		
-		int initialPhase = 0;
-		switch(rotation.getRotationID()) {
-			case 1:
-				initialPhase = 1;
-				break;	
-			case 2:
-				initialPhase = 2;
-				break;	
-			case 3:
-				initialPhase = 3;
-				break;
-		}
+		NPC zulrah = new NPC(2042, new Position(2268, 3074, player.getIndex() * 4));
+		zulrah.setSpawnedFor(player);
 		
-		try {
-			getNextPhase(player, 5000, initialPhase);
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		}
-		return;
-	}
-	
-	public static void getNextPhase(Player player, int zulrahConstitution, int phaseID) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		ZulrahPhase phase = zulrahPhases.get(phaseID);
-		Method method = phase.phaseClass().getMethod("spawn", Player.class, int.class, int.class);
-		try {
-			method.invoke(phase.phaseClass().newInstance(), player, zulrahConstitution, phaseID);
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		}
+		player.setRegionInstance(new RegionInstance(player, RegionInstanceType.ZULRAH_SHRINE));
+		player.getRegionInstance().getNpcsList().add(zulrah);
+		
+		World.register(zulrah);
+		
+		zulrah.performAnimation(ZULRAH_RISE_ANIMATION);
 	}
 
 }

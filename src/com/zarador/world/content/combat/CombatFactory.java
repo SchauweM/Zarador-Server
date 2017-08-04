@@ -886,7 +886,7 @@ public final class CombatFactory {
         }
 
         // Here we check if the victim has teleported away.
-        if (victim.isPlayer()) {
+        if (victim.isPlayer() && entity.getIndex() != 2042) {
             if (((Player) victim).isTeleporting()
                     || !Location.ignoreFollowDistance(entity)
                     && !Locations.goodDistance(victim.getPosition(), entity.getPosition(), 40)

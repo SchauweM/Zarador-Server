@@ -1662,6 +1662,7 @@ public class Player extends Character {
     public SkillManager getSkillManager() {
         return skillManager;
     }
+   
 
     public Appearance getAppearance() {
         return appearance;

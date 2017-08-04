@@ -1,11 +1,14 @@
 package com.zarador.world.content.combat.strategy.impl.kraken;
 
+import com.zarador.model.Animation;
+import com.zarador.model.Projectile;
 import com.zarador.world.content.combat.CombatContainer;
 import com.zarador.world.content.combat.CombatType;
 import com.zarador.world.content.combat.magic.CombatSpells;
 import com.zarador.world.content.combat.strategy.CombatStrategy;
 import com.zarador.world.entity.impl.Character;
 import com.zarador.world.entity.impl.npc.NPC;
+import com.zarador.world.entity.impl.player.Player;
 
 public class Kraken implements CombatStrategy {
 
@@ -15,14 +18,17 @@ public class Kraken implements CombatStrategy {
 
 	@Override
 	public CombatContainer attack(Character entity, Character victim) {
-		NPC kraken = (NPC)entity;
-		kraken.prepareSpell(CombatSpells.KRAKEN_STRIKE.getSpell(), victim);
-		return new CombatContainer(entity, victim, 1, CombatType.MAGIC, true);
+		return null;
 	}
 
 	@Override
 	public boolean customContainerAttack(Character entity, Character victim) {
-		return false;
+		Player player = (Player)victim;
+		NPC kraken = (NPC)entity;
+		kraken.getCombatBuilder().setContainer(new CombatContainer(entity, player, 1, CombatType.MAGIC, true));
+		new Projectile(entity, victim, 2705, 44, 3, 43, 31, 0);
+		entity.performAnimation(new Animation(3991));
+		return true;
 	}
 
 	@Override
@@ -37,7 +43,11 @@ public class Kraken implements CombatStrategy {
 
 	@Override
 	public CombatType getCombatType() {
-		return CombatType.MAGIC;
+		return null;
+	}
+	
+	public static void handleDeath(int playerPosition, Player player) {
+
 	}
 
 }

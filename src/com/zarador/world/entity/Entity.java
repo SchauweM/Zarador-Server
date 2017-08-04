@@ -136,6 +136,7 @@ public class Entity {
 	public void performAnimation(Animation animation) {
 
 	}
+	
 
 	/**
 	 * Performs a graphic.

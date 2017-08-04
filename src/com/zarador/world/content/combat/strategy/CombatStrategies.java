@@ -6,6 +6,7 @@ import java.util.Map;
 import com.zarador.world.content.combat.strategy.impl.*;
 import com.zarador.world.content.combat.strategy.impl.kraken.Kraken;
 import com.zarador.world.content.combat.strategy.impl.kraken.Tentacles;
+import com.zarador.world.content.combat.strategy.impl.zulrah.ZulrahStrategy;
 
 public class CombatStrategies {
 
@@ -16,6 +17,7 @@ public class CombatStrategies {
 
 	public static void init() {
 		DefaultMagicCombatStrategy defaultMagicStrategy = new DefaultMagicCombatStrategy();
+		STRATEGIES.put(2042, new ZulrahStrategy());
 		STRATEGIES.put(6618, new CrazyArcheologist());
 		STRATEGIES.put(6619, new ChaosFanatic());
 		STRATEGIES.put(502, new Kraken());

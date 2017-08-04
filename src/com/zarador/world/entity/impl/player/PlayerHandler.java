@@ -47,6 +47,8 @@ import com.zarador.world.content.skill.impl.farming.FarmingManager;
 import com.zarador.world.content.skill.impl.hunter.Hunter;
 import com.zarador.world.entity.impl.npc.NPC;
 
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
+
 public class PlayerHandler {
 
 	public static void displayCombatLevels(Player player) {
@@ -105,6 +107,8 @@ public class PlayerHandler {
 			player.getPacketSender().sendConfig(427, 1);
 		}
 
+		player.getPacketSender().sendMessage("Welcome to "+GameSettings.SERVER_NAME+"!");
+		
 		Titles.onLogin(player);
 
 		player.getInventory().refreshItems();
