@@ -308,6 +308,215 @@ public class Locations {
                 return true;
             }
         },
+        ZULRAH_CLOUD_ONE(new int[] { 2262, 2264 }, new int[] { 3074, 3076 }, true, true, true, true, true, true) {
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+		},
+		ZULRAH_CLOUD_TWO(new int[] { 2262, 2264 }, new int[] { 3072, 3074 }, true, true, true, true, true, true) {
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+		},
+		ZULRAH_CLOUD_THREE(new int[] { 2262, 2264 }, new int[] { 3069, 3071 }, true, true, true, true, true, true) {
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+		},
+		ZULRAH_CLOUD_FOUR(new int[] { 2265, 2267 }, new int[] { 3068, 3070 }, true, true, true, true, true, true) {
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+		},
+		ZULRAH_CLOUD_FIVE(new int[] { 2268, 2270 }, new int[] { 3068, 3070 }, true, true, true, true, true, true) {
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+		},
+		ZULRAH_CLOUD_SIX(new int[] { 2271, 2273 }, new int[] { 3069, 3071 }, true, true, true, true, true, true) {
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+		},
+		ZULRAH_CLOUD_SEVEN(new int[] { 2272, 2274 }, new int[] { 3072, 3074 }, true, true, true, true, true, true) {
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+		},
+		ZULRAH_CLOUD_EIGHT(new int[] { 2265, 2264 }, new int[] { 3069, 3071 }, true, true, true, true, true, true) {
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+		},
+		ZULRAH(new int[] { 2257, 2281 }, new int[] { 3063, 3083 }, true, true, true, true, true, true) {
+
+			@Override
+			public boolean canTeleport(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.getRegionInstance().getNpcsList().forEach(npc -> {
+					World.deregister(npc);
+				});
+			}
+
+		},
         BARROWS(new int[]{3520, 3598, 3543, 3584, 3543, 3560}, new int[]{9653, 9750, 3265, 3314, 9685, 9702},
                 false, true, true, true, true, true) {
             @Override

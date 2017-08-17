@@ -1,5 +1,7 @@
 package com.zarador.world.content.combat.strategy.impl.zulrah;
 
+import com.zarador.model.Position;
+
 public class ZulrahPhase {
 
 	private int nextPhase;
@@ -8,16 +10,13 @@ public class ZulrahPhase {
 	
 	private Class<?> phaseClass;
 	
-	private int zulrahX;
+	private Position zulrahPosition;
 	
-	private int zulrahY;
-	
-	public ZulrahPhase(int nextPhase, String phaseName, Class<?> phaseClass, int zulrahX, int zulrahY) {
+	public ZulrahPhase(int nextPhase, String phaseName, Class<?> phaseClass, Position zulrahPosition) {
 		this.nextPhase = nextPhase;
 		this.phaseName = phaseName;
 		this.phaseClass = phaseClass;
-		this.zulrahX = zulrahX;
-		this.zulrahY = zulrahY;
+		this.zulrahPosition = zulrahPosition;
 	}
 	
 	public int getNextPhase() {
@@ -32,12 +31,7 @@ public class ZulrahPhase {
 		return phaseClass;
 	}
 	
-	public int getZulrahX() {
-		return zulrahX;
+	public Position getZulrahPosition() {
+		return zulrahPosition;
 	}
-	
-	public int getZulrahY() {
-		return zulrahY;
-	}
-	
 }

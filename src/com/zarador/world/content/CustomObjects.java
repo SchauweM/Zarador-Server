@@ -206,6 +206,25 @@ public class CustomObjects {
             }
         });
     }
+    
+    public static void globalToxicCloudTask(final GameObject cloud, final Player player, final int cycles) {
+        spawnGlobalObject(cloud);
+        TaskManager.submit(new Task(cycles) {
+            @Override
+            public void execute() {
+                deleteGlobalObject(cloud);
+                if (player.getInteractingObject() != null
+						&& player.getInteractingObject().getId() == 11700) {
+					player.setInteractingObject(null);
+				}
+                this.stop();
+            }
+
+            @Override
+            public void stop() {
+                setEventRunning(false);            }
+        });
+    }
 
     /**
      * Contains

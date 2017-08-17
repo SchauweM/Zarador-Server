@@ -698,15 +698,15 @@ public final class Region {
     }
 
     public  int getMask(int x, int y, int z) {
-        return collisionMasks[z][x % 64][y % 64];
+        return collisionMasks[z % 4][x % 64][y % 64];
     }
 
     public void flag(int x, int y, int z, int mask) {
-        collisionMasks[z][x % 64][y % 64] |= mask;
+        collisionMasks[z % 4][x % 64][y % 64] |= mask;
     }
 
     public void unflag(int x, int y, int z, int mask) {
-        collisionMasks[z][x % 64][y % 64] ^= mask;
+        collisionMasks[z % 4][x % 64][y % 64] ^= mask;
     }
 
     public void remove(GameObject object) {

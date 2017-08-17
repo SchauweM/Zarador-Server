@@ -160,6 +160,17 @@ public abstract class Character extends Entity {
 		primaryHit = decrementHealth(hit);
 
 	}
+	
+	public void dealDamage(Hit hit) {
+		if (getUpdateFlag().flagged(Flag.SINGLE_HIT)) {
+			dealSecondaryDamage(hit);
+			return;
+		}
+		if(getConstitution() <= 0)
+			return;
+		primaryHit = decrementHealth(hit);
+		getUpdateFlag().flag(Flag.SINGLE_HIT);
+	}
 
 	public Hit decrementHealth(Hit hit) {
 		if (getConstitution() <= 0)

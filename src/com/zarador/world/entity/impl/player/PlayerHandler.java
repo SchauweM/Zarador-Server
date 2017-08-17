@@ -38,6 +38,7 @@ import com.zarador.world.content.combat.prayer.CurseHandler;
 import com.zarador.world.content.combat.prayer.PrayerHandler;
 import com.zarador.world.content.combat.pvp.BountyHunter;
 import com.zarador.world.content.combat.range.DwarfMultiCannon;
+import com.zarador.world.content.combat.strategy.impl.zulrah.ZulrahToxicCloud;
 import com.zarador.world.content.combat.weapon.CombatSpecial;
 import com.zarador.world.content.logs.Logs;
 import com.zarador.world.content.minigames.impl.Barrows;
@@ -197,6 +198,7 @@ public class PlayerHandler {
 
 		// Tasks
 		TaskManager.submit(new PlayerSkillsTask(player));
+		TaskManager.submit(new ZulrahToxicCloud(player));
 		if (player.isPoisoned()) {
 			TaskManager.submit(new CombatPoisonEffect(player));
 		}

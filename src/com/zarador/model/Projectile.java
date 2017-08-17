@@ -4,6 +4,7 @@ import com.zarador.engine.task.Task;
 import com.zarador.engine.task.TaskManager;
 import com.zarador.world.World;
 import com.zarador.world.entity.Entity;
+import com.zarador.world.entity.impl.Character;
 import com.zarador.world.entity.impl.player.Player;
 
 /**
@@ -96,18 +97,27 @@ public final class Projectile {
 	 * @param curve
 	 *            the curve angle of the projectile.
 	 */
-	public Projectile(Entity source, Entity victim, int projectileId, int delay, int speed, int startHeight,
-			int endHeight, int curve) {
-		this(source.getPosition(), victim.getPosition(),
-				(victim.isPlayer() ? -victim.getIndex() - 1 : victim.getIndex() + 1), projectileId, delay, speed,
-				startHeight, endHeight, curve);
-	}
+	public Projectile(Entity source, Entity victim, int projectileId,
+	        int delay, int speed, int startHeight, int endHeight, int curve) {
+	        this(source.getPosition(), victim.getPosition(),
+	            (victim.isPlayer() ? -victim.getIndex() - 1
+	                : victim.getIndex() + 1), projectileId, delay, speed,
+	            startHeight, endHeight, curve);
+	    }
 
 	public Projectile(Position entityPosition, Position victimPosition, Entity victim, int projectileId, int delay, int speed, int startHeight,
 			int endHeight, int curve) {
 		this(entityPosition, victimPosition,
 				(victim.isPlayer() ? -victim.getIndex() - 1 : victim.getIndex() + 1), projectileId, delay, speed,
 				startHeight, endHeight, curve);
+	}
+
+
+	public Projectile(Character entity, Position pos, int projectileId, int delay, int speed, int startHeight,
+			int endHeight, int curve) {
+			this(entity.getPosition(), pos,
+					0, projectileId, delay, speed,
+					startHeight, endHeight, curve);
 	}
 
 	/**

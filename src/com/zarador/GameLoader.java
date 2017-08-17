@@ -19,6 +19,7 @@ import com.zarador.world.content.clan.ClanChatManager;
 import com.zarador.world.content.combat.effect.CombatPoisonEffect.CombatPoisonData;
 import com.zarador.world.content.combat.effect.CombatVenomEffect.CombatVenomData;
 import com.zarador.world.content.combat.strategy.CombatStrategies;
+import com.zarador.world.content.combat.strategy.impl.zulrah.Zulrah;
 import com.zarador.world.content.diversions.hourly.HourlyDiversionManager;
 import com.zarador.world.content.lottery.LotterySaving;
 import com.zarador.world.content.pos.PlayerOwnedShops;
@@ -69,6 +70,7 @@ public final class GameLoader {
 		CacheObjectDefinition.load(new Archive(GameServer.cache.getFile(0, 2)));
 		World.loadRegions(new Archive(GameServer.cache.getFile(0, 5)));
 		CustomObjects.init();
+		Zulrah.init();
 		ItemDefinition.init().load();
 		DoorManager.init();
 		PlayerOwnedShops.init();

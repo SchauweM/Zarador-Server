@@ -31,6 +31,7 @@ import com.zarador.net.mysql.impl.Hiscores;
 import com.zarador.net.packet.PacketSender;
 import com.zarador.util.Misc;
 import com.zarador.util.Stopwatch;
+import com.zarador.world.World;
 import com.zarador.world.content.*;
 import com.zarador.world.content.BankPin.BankPinAttributes;
 import com.zarador.world.content.DropLog.DropLogEntry;
@@ -296,6 +297,7 @@ public class Player extends Character {
 		return false;
 	}
 
+	
     public int idNpcSpawn = 0;
     public boolean canWalkNpcSpawn = false;
     public int radiusNpcSpawn = 0;
